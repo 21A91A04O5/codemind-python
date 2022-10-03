@@ -1,19 +1,13 @@
-a=int(input())
-b=int(input())
-for i in range(a,b+1,1):
-    n=i
-    c=0
-    count=0
-    while(n>0):
-        r=n%10
-        n=n//10
-        c+=1
-        if(r==0):
-            break
-        if(i%r==0 and r!=0):
-            count+=1
-    if(c==count):
-        print(i,end=' ')
-        
-        
-    
+def seldivnum(num):
+    temp=num
+    while temp:
+        d=temp%10
+        temp=temp//10
+        if d==0 or num%d!=0:
+            return False
+    return True
+n=int(input())
+m=int(input())
+for i in range(n,m+1):
+    if(seldivnum(i)):
+        print(i,end=" ")
